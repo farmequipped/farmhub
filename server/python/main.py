@@ -20,14 +20,6 @@ airsense_channel = AnalogIn(mcp, 0)
 
 temphumidsense = adafruit_dht.DHT11(board.A2)
 
-VCC = 5.0           # Sensor supply voltage
-RL = 10000          # Load resistor in Ohms (10k)
-RO_CLEAN_AIR = 10000  # Measured Ro in clean air, adjust from calibration
-
-# MQ135 curve constants for CO (from datasheet example)
-A_CO = 110.47
-B_CO = -2.862
-
 # -----------------------------
 # Configuration
 # -----------------------------
@@ -44,27 +36,26 @@ scaler = StandardScaler()
 
 def get_live_data():
     """
-    Returns 1x3 NumPy array: [CO_ppm, Temp_C, Humidity_%]
+    Returns 1x5 NumPy array:
+    [CO, Formaldehyde, Acetone, Temp, Humidity]
+    For Grove v1.3, gases are estimated from the single analog voltage.
     """
     try:
-        # Read MQ135 voltage
-        Vrl = airsense_channel.voltage
-        Rs = ((VCC - Vrl) / Vrl) * RL
-        ratio = Rs / RO_CLEAN_AIR
+        voltage = airsense_channel.voltage
 
-        # Calculate estimated CO in ppm
-        ppm_CO = A_CO * (ratio ** B_CO)
+        # Estimate each gas (dummy scaling, since sensor is general VOC)
+        co = voltage * 10         # Arbitrary scaling for demo
+        formaldehyde = voltage * 5
+        acetone = voltage * 2
 
-        # Read temperature and humidity
         temp = temphumidsense.temperature
         humidity = temphumidsense.humidity
 
-        return np.array([[ppm_CO, temp, humidity]])
-
+        return np.array([[co, formaldehyde, acetone, temp, humidity]])
+    
     except Exception as e:
         print(f"Error reading sensors: {e}")
-        return np.zeros((1, 3))
-
+        return np.zeros((1, 5))
 
 # -----------------------------
 # Main loop
