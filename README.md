@@ -1,4 +1,7 @@
 **Farm Disaster Hub** 🌱  
+
+**Created & Authored by Dominik Honzak**
+
 **Predict. Alert. Protect.** *Track 2: GW Global Food Institute \- Problem Statement 3* (*Feeding Communities When It Matters Most*)
 
 Farm Disaster Hub (FDH) is an open-source, IoT-enabled early warning system designed to strengthen food access for vulnerable agricultural communities before, during, and after natural disasters. By utilizing a localized web of predictive environmental sensors, FDH does not just warn a farmer of an impending disaster that could destroy crop yields–it acts as an automated, rapid-response marketplace that instantly pings local food banks, relief workers, and community organizations to secure harvests before they are destroyed.
