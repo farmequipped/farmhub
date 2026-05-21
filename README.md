@@ -2,7 +2,7 @@
 
 **Code Created & Authored by Dominik Honzak**
 
-**Hardware Created by Aiden Willet**
+**Hardware Created by Aiden Willett**
 
 **Documentation and Presentation by Daris Dedic**
 
