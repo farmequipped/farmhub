@@ -4,7 +4,7 @@
 
 **Hardware Created by Aiden Willett**
 
-**Documentation and Presentation by Daris Dedic**
+**Research, Documentation, Presentation by Daris Dedic**
 
 **Full Project: https://devpost.com/software/farm-alert**
 
