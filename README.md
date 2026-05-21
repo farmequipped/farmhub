@@ -1,6 +1,12 @@
 **Farm Disaster Hub** 🌱  
 
-**Created & Authored by Dominik Honzak**
+**Code Created & Authored by Dominik Honzak**
+
+**Hardware Created by Aiden Willet**
+
+**Documentation and Presentation by Daris Dedic**
+
+**Full Project: https://devpost.com/software/farm-alert**
 
 **Predict. Alert. Protect.** *Track 2: GW Global Food Institute \- Problem Statement 3* (*Feeding Communities When It Matters Most*)
 
@@ -26,7 +32,7 @@ FDH operates through a seamless integration of off-grid hardware, continuous mac
 * **Enclosure:** Modeled for extreme weather survivability, the CAD housing applies aerodynamic principles to withstand severe wind shear during hurricane events. Structural transitions and chamfers on the external mounts are precisely drafted to yield circular, structurally sound bases to prevent localized stress fracturing during seismic or high-impact events.
 
 2. **The Predictive AI Model**  
-   The core detection engine is a TensorFlow.js multi-class neural network trained to detect the localized chemical “fingerprints” of specific disasters using the following output labels:  
+   The core detection engine is a TensorFlow.py multi-class neural network trained to detect the localized chemical “fingerprints” of specific disasters using the following output labels:  
 * **0 \- Normal Air:** Standard baseline metrics  
 * **1 \- Wildfire:** Massive Carbon Monoxide (CO) and temperature spikes derived from EPA historical maximums.  
 * **2 \- Flooding / Crop Rot:** Anaerobic decomposition releasing high levels of Acetone/Ethanol alongside plummeting temperatures (based on NIH biochemistry data and NOAA meteorological models).  
